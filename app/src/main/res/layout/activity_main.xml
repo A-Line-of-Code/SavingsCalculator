@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goal:"
+        android:textSize="18dp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:id="@+id/editTextGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_toRightOf="@+id/textWeeklyIncome"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currency:"
+        android:textSize="18dp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:layout_below="@+id/textGoal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editTextCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_toRightOf="@id/textCurrency"
+        android:layout_below="@id/editTextGoal"
+        android:layout_alignStart="@id/editTextGoal" />
+
+    <TextView
+        android:id="@+id/textWeeklyIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly Income:"
+        android:textSize="18dp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:layout_below="@id/textCurrency"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editTextWeeklyIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_toRightOf="@id/textWeeklyIncome"
+        android:layout_below="@id/editTextCurrency"
+        android:layout_alignStart="@id/editTextCurrency" />
+
+    <TextView
+        android:id="@+id/textExpenditure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expenditure:"
+        android:textSize="18dp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:layout_below="@id/textWeeklyIncome"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editTextExpenditure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_toRightOf="@id/textExpenditure"
+        android:layout_below="@id/editTextWeeklyIncome"
+        android:layout_alignStart="@id/editTextWeeklyIncome" />
+
+    <TextView
+        android:id="@+id/textPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Percentage:"
+        android:textSize="18dp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:layout_below="@id/textExpenditure"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editTextPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_toRightOf="@id/textPercentage"
+        android:layout_below="@id/editTextExpenditure"
+        android:layout_alignStart="@id/editTextExpenditure" />
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:textSize="20dp"
+        android:textColor="@color/buttonTextColor"
+        android:background="@color/buttonColor"
+        android:layout_below="@+id/textPercentage"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
