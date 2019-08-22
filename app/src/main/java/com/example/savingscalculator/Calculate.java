@@ -1,7 +1,6 @@
 package com.example.savingscalculator;
 
 public class Calculate {
-<<<<<<< Updated upstream
     public static double calculateCurrency(String currency, double goal) {
         if (currency.equals("USD"))
             return goal + (55.520 * goal) / 100.0;
@@ -34,7 +33,6 @@ public class Calculate {
         return goal / result;
     }
 }
-=======
 	public static double calculateCurrency(String currency, double goal) {
 		if (currency.equals("USD"))
 			return goal + (55.520 * goal) / 100.0;
@@ -67,4 +65,3 @@ public class Calculate {
 		return goal / result;
 	}
 }
->>>>>>> Stashed changes
