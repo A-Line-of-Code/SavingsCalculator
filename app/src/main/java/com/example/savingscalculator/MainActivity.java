@@ -8,10 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.example.savingscalculator.Calculate.*;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnCalculate;
-    private EditText editTextWeeklyIncome, editTextExpenditure;
+    private EditText editTextGoal, editTextWeeklyIncome, editTextExpenditure, editTextPercentage;
+    private double goal, income, tax, expenditure, percentage, net, result, weeks;
+    private String currency;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,21 +23,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnCalculate = findViewById(R.id.btnCalculate);
+        editTextGoal = findViewById(R.id.editTextGoal);
         editTextWeeklyIncome = findViewById(R.id.editTextWeeklyIncome);
         editTextExpenditure = findViewById(R.id.editTextExpenditure);
+        editTextPercentage = findViewById(R.id.editTextPercentage);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Income minus Expenditure is " + subtract(), Toast.LENGTH_SHORT).show();
+                goal = Double.parseDouble(editTextGoal.getText().toString());
+                currency = editTextWeeklyIncome.getText().toString();
+                goal = calculateCurrency(currency, goal);
+
+                income = Double.parseDouble(editTextWeeklyIncome.getText().toString());
+                tax = calculateTax(income);
+
+                expenditure = Double.parseDouble(editTextExpenditure.getText().toString());
+                percentage = Double.parseDouble(editTextPercentage.getText().toString());
+
+                net = calculateNet(income, tax);
+                result = calculateGoal(net, expenditure, percentage);
+                weeks = calculateWeeks(goal, result);
+
+                Toast.makeText(MainActivity.this, "It will take " + Math.round(weeks) + " weeks to save $" + Math.round(goal), Toast.LENGTH_SHORT).show();
             }
         });
-    } // end of onCreate() method
-
-    public int subtract() {
-        int weeklyIncome = Integer.parseInt(editTextWeeklyIncome.getText().toString());
-        int expenditure = Integer.parseInt(editTextExpenditure.getText().toString());
-        int result = weeklyIncome - expenditure;
-        return result;
-    } // end of subtract() method
+    }
 }
