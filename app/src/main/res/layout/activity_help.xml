@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/help_intro" />
+
+    <TextView
+        android:id="@+id/textGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textIntro"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/help_goal_label"
+        />
+
+    <TextView
+        android:id="@+id/textGoalDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textIntro"
+        android:layout_toRightOf="@id/textWeeklyIncome"
+        android:layout_marginTop="10dp"
+        android:text="@string/help_goal"
+        />
+
+    <TextView
+        android:id="@+id/textWeeklyIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textGoal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/help_weekly_income_label"
+        />
+
+    <TextView
+        android:id="@+id/textWeeklyIncomeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textGoal"
+        android:layout_toRightOf="@id/textWeeklyIncome"
+        android:layout_marginTop="40dp"
+        android:text="@string/help_weekly_income"
+        />
+
+    <TextView
+        android:id="@+id/textExpenditure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textWeeklyIncome"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/help_expenditure_label"
+        />
+
+    <TextView
+        android:id="@+id/textExpenditureDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textWeeklyIncome"
+        android:layout_toRightOf="@id/textWeeklyIncome"
+        android:layout_marginTop="40dp"
+        android:text="@string/help_expenditure"
+        />
+
+    <TextView
+        android:id="@+id/textPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textExpenditure"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/help_percentage_label"
+        />
+
+    <TextView
+        android:id="@+id/textPercentageDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textExpenditure"
+        android:layout_toRightOf="@id/textWeeklyIncome"
+        android:layout_marginTop="40dp"
+        android:text="@string/help_percentage"
+        />
+</RelativeLayout>

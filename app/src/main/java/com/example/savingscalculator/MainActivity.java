@@ -2,6 +2,8 @@ package com.example.savingscalculator;
 
 //import android.support.v7.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +14,7 @@ import static com.example.savingscalculator.Calculate.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnCalculate;
+    private Button btnCalculate, btnHelp;
     private EditText editTextGoal, editTextWeeklyIncome, editTextExpenditure, editTextPercentage;
     private double goal, income, tax, expenditure, percentage, net, result, weeks;
     private String currency;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnCalculate = findViewById(R.id.btnCalculate);
+        btnHelp = findViewById(R.id.btnHelp);
         editTextGoal = findViewById(R.id.editTextGoal);
         editTextWeeklyIncome = findViewById(R.id.editTextWeeklyIncome);
         editTextExpenditure = findViewById(R.id.editTextExpenditure);
@@ -46,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 weeks = calculateWeeks(goal, result);
 
                 Toast.makeText(MainActivity.this, "It will take " + Math.round(weeks) + " weeks to save $" + Math.round(goal), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent help = new Intent(getApplicationContext(), HelpActivity.class);
+                startActivity(help);
             }
         });
     }
