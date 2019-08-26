@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">SavingsCalculator</string>
+    <string name="app_name">Savings Calculator</string>
+    <string name="help_button">Help</string>
+    <string name="help_goal_label">Goal</string>
+    <string name="help_weekly_income_label">Weekly Income</string>
+    <string name="help_expenditure_label">Expenditure</string>
+    <string name="help_percentage_label">Percentage</string>
+    <string name="help_intro">Use this application to calculate the amount of weeks it would take to save towards a desired item.</string>
+    <string name="help_goal">Enter the cost of the desired item and select the currency from the dropdown box</string>
+    <string name="help_weekly_income">Enter your weekly income before tax</string>
+    <string name="help_expenditure">Enter your total weekly expenditure</string>
+    <string name="help_percentage">Enter the percentage of your net income you wish to save each week for the desired item</string>
 </resources>
