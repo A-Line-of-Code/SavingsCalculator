@@ -13,10 +13,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/textColor"
         android:text="@string/help_intro" />
 
     <TextView
         android:id="@+id/textGoal"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textIntro"
@@ -27,16 +32,20 @@
 
     <TextView
         android:id="@+id/textGoalDescription"
+        android:textColor="@color/textColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textIntro"
         android:layout_toRightOf="@id/textWeeklyIncome"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/help_goal"
         />
 
     <TextView
         android:id="@+id/textWeeklyIncome"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textGoal"
@@ -47,16 +56,20 @@
 
     <TextView
         android:id="@+id/textWeeklyIncomeDescription"
+        android:textColor="@color/textColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textGoal"
         android:layout_toRightOf="@id/textWeeklyIncome"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/help_weekly_income"
         />
 
     <TextView
         android:id="@+id/textExpenditure"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textWeeklyIncome"
@@ -67,16 +80,20 @@
 
     <TextView
         android:id="@+id/textExpenditureDescription"
+        android:textColor="@color/textColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textWeeklyIncome"
         android:layout_toRightOf="@id/textWeeklyIncome"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
         android:text="@string/help_expenditure"
         />
 
     <TextView
         android:id="@+id/textPercentage"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textExpenditure"
@@ -87,11 +104,13 @@
 
     <TextView
         android:id="@+id/textPercentageDescription"
+        android:textColor="@color/textColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textExpenditure"
         android:layout_toRightOf="@id/textWeeklyIncome"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/help_percentage"
         />
 </RelativeLayout>

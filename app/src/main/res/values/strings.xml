@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Savings Calculator</string>
+    <string name="main_activity_label">Savings Calculator</string>
+    <string name="help_activity_label">Help</string>
     <string name="help_button">Help</string>
     <string name="help_goal_label">Goal</string>
     <string name="help_weekly_income_label">Weekly Income</string>
