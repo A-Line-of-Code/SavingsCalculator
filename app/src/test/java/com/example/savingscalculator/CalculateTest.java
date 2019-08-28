@@ -8,58 +8,48 @@ import static org.junit.Assert.*;
 
 public class CalculateTest {
 
-    private double income, tax, percentage, net, expenditure, goal, result;
-    private String currency;
+//    private double goal, income, expenditure, rateOfSaving;
+    private double goalWithCurrency, incomeAfterTax, savings;
+//    private int weeks;
+//    private String currency;
 
     private double expected, actual;
     private Calculate c1;
 
     @Before
     public void setUp() throws Exception {
-        income = 300;
-        tax = 17.5;
-        percentage = 20;
-        net = 247.5;
-        expenditure = 50;
-        goal = 39.5;
-        result = 0;
-        currency = "USD";
+        c1 = new Calculate(3100, 900, 150, 12.5, "USD");
 
-        c1 = new Calculate();
+        goalWithCurrency = 1984;
+        incomeAfterTax = 742.5;
+        savings = 74.0625;
     }
 
     @Test
-    public void testCalculateTax() {
-        actual = c1.calculateTax(income);
-        expected = 17.5;
+    public void testCalculateGoalWithCurrency() {
+        actual = c1.calculateGoalWithCurrency(c1.getGoal(), c1.getCurrency());
+        expected = 1984;
         assertEquals(expected, actual, 0);
     }
 
     @Test
-    public void testCalculateNet() {
-        expected = 247.5;
-        actual = c1.calculateNet(income, tax);
+    public void testCalculateIncomeAfterTax() {
+        actual = c1.calculateIncomeAfterTax(c1.getIncome());
+        expected = 742.5;
         assertEquals(expected, actual, 0);
     }
 
     @Test
-    public void testCalculateGoal() {
-        expected = 39.5;
-        actual = c1.calculateGoal(net, expenditure, percentage);
+    public void testCalculateSavings() {
+        actual = c1.calculateSavings(incomeAfterTax, c1.getExpenses(), c1.getRateOfSaving());
+        expected = 74.0625;
         assertEquals(expected, actual, 0);
     }
 
     @Test
     public void testCalculateWeeks() {
-        expected = 0;
-        actual = c1.calculateWeeks(goal, result);
-        assertEquals(expected, actual, 0);
-    }
-
-    @Test
-    public void testCalculateCurrency() {
-        expected = 22.3254;
-        actual = c1.calculateCurrency(currency, goal);
+        actual = c1.calculateWeeks(goalWithCurrency, savings);
+        expected = 27;
         assertEquals(expected, actual, 0);
     }
 

@@ -10,13 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static com.example.savingscalculator.Calculate.*;
-
 public class MainActivity extends AppCompatActivity {
 
     private Button btnCalculate, btnHelp;
-    private EditText editTextGoal, editTextWeeklyIncome, editTextExpenditure, editTextPercentage;
-    private double goal, income, tax, expenditure, percentage, net, result, weeks;
+    private EditText editTextGoal, editTextWeeklyIncome, editTextExpenditure, editTextPercentage, editTextCurrency;
+    private double goal, income, expenditure, rateOfSaving;
+    private double goalWithCurrency, incomeAfterTax, savings;
+    private int weeks;
     private String currency;
 
     @Override
@@ -24,31 +24,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnCalculate = findViewById(R.id.btnCalculate);
-        btnHelp = findViewById(R.id.btnHelp);
         editTextGoal = findViewById(R.id.editTextGoal);
         editTextWeeklyIncome = findViewById(R.id.editTextWeeklyIncome);
         editTextExpenditure = findViewById(R.id.editTextExpenditure);
         editTextPercentage = findViewById(R.id.editTextPercentage);
+        editTextCurrency = findViewById(R.id.editTextCurrency);
+        btnCalculate = findViewById(R.id.btnCalculate);
+
+        btnHelp = findViewById(R.id.btnHelp);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goal = Double.parseDouble(editTextGoal.getText().toString());
-                currency = editTextWeeklyIncome.getText().toString();
-                goal = calculateCurrency(currency, goal);
-
                 income = Double.parseDouble(editTextWeeklyIncome.getText().toString());
-                tax = calculateTax(income);
-
                 expenditure = Double.parseDouble(editTextExpenditure.getText().toString());
-                percentage = Double.parseDouble(editTextPercentage.getText().toString());
+                rateOfSaving = Double.parseDouble(editTextPercentage.getText().toString());
+                currency = editTextCurrency.getText().toString();
 
-                net = calculateNet(income, tax);
-                result = calculateGoal(net, expenditure, percentage);
-                weeks = calculateWeeks(goal, result);
+                Calculate c1 = new Calculate(goal, income, expenditure, rateOfSaving, currency);
+//                Toast.makeText(MainActivity.this, "ToString(): " + c1.toString(), Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(MainActivity.this, "It will take " + Math.round(weeks) + " weeks to save $" + Math.round(goal), Toast.LENGTH_SHORT).show();
+                goalWithCurrency = c1.calculateGoalWithCurrency(c1.getGoal(), c1.getCurrency());
+                incomeAfterTax = c1.calculateIncomeAfterTax(c1.getIncome());
+                savings = c1.calculateSavings(incomeAfterTax, c1.getExpenses(), c1.getRateOfSaving());
+                weeks = c1.calculateWeeks(goalWithCurrency, savings);
+
+                Toast.makeText(MainActivity.this, "It will take " + weeks + " weeks to save $" + goal + " (" + currency + ")", Toast.LENGTH_SHORT).show();
             }
         });
 
