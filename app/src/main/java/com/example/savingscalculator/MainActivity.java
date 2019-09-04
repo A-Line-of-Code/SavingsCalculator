@@ -6,14 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnCalculate, btnHelp;
-    private EditText editTextGoal, editTextWeeklyIncome, editTextExpenditure, editTextPercentage, editTextCurrency;
+    private EditText editTextGoal, editTextWeeklyIncome, editTextExpenditure, editTextPercentage;
+    private Spinner dropdownCurrencies;
+
     private double goal, income, expenditure, rateOfSaving;
     private double goalWithCurrency, incomeAfterTax, savings;
     private int weeks;
@@ -28,29 +32,32 @@ public class MainActivity extends AppCompatActivity {
         editTextWeeklyIncome = findViewById(R.id.editTextWeeklyIncome);
         editTextExpenditure = findViewById(R.id.editTextExpenditure);
         editTextPercentage = findViewById(R.id.editTextPercentage);
-        editTextCurrency = findViewById(R.id.editTextCurrency);
         btnCalculate = findViewById(R.id.btnCalculate);
+
+        dropdownCurrencies = findViewById(R.id.spinnerCurrency);
+        final String[] currencies = new String[]{"NZD","USD","AUD","EUR","GBP"};
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, currencies);
+        dropdownCurrencies.setAdapter(adapter);
 
         btnHelp = findViewById(R.id.btnHelp);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goal = Double.parseDouble(editTextGoal.getText().toString());
-                income = Double.parseDouble(editTextWeeklyIncome.getText().toString());
-                expenditure = Double.parseDouble(editTextExpenditure.getText().toString());
-                rateOfSaving = Double.parseDouble(editTextPercentage.getText().toString());
-                currency = editTextCurrency.getText().toString();
+            goal = Double.parseDouble(editTextGoal.getText().toString());
+            income = Double.parseDouble(editTextWeeklyIncome.getText().toString());
+            expenditure = Double.parseDouble(editTextExpenditure.getText().toString());
+            rateOfSaving = Double.parseDouble(editTextPercentage.getText().toString());
+            currency = String.valueOf(dropdownCurrencies.getSelectedItem());
 
-                Calculate c1 = new Calculate(goal, income, expenditure, rateOfSaving, currency);
-//                Toast.makeText(MainActivity.this, "ToString(): " + c1.toString(), Toast.LENGTH_SHORT).show();
+            Calculate c1 = new Calculate(goal, income, expenditure, rateOfSaving, currency);
 
-                goalWithCurrency = c1.calculateGoalWithCurrency(c1.getGoal(), c1.getCurrency());
-                incomeAfterTax = c1.calculateIncomeAfterTax(c1.getIncome());
-                savings = c1.calculateSavings(incomeAfterTax, c1.getExpenses(), c1.getRateOfSaving());
-                weeks = c1.calculateWeeks(goalWithCurrency, savings);
+            goalWithCurrency = c1.calculateGoalWithCurrency(c1.getGoal(), c1.getCurrency());
+            incomeAfterTax = c1.calculateIncomeAfterTax(c1.getIncome());
+            savings = c1.calculateSavings(incomeAfterTax, c1.getExpenses(), c1.getRateOfSaving());
+            weeks = c1.calculateWeeks(goalWithCurrency, savings);
 
-                Toast.makeText(MainActivity.this, "It will take " + weeks + " weeks to save $" + goal + " (" + currency + ")", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "It will take " + weeks + " weeks to save $" + goal + " (" + currency + ")", Toast.LENGTH_SHORT).show();
             }
         });
 
