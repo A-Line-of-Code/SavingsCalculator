@@ -23,55 +23,45 @@
         android:id="@+id/editTextGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/textWeeklyIncome"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:id="@+id/textCurrency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Currency:"
-        android:textSize="18dp"
-        android:textColor="@color/textColor"
-        android:textStyle="bold"
-        android:layout_below="@+id/textGoal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp" />
-
-    <EditText
-        android:id="@+id/editTextCurrency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:width="120dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_toRightOf="@id/textCurrency"
-        android:layout_below="@id/editTextGoal"
-        android:layout_alignStart="@id/editTextGoal" />
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinnerCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/editTextGoal"
+        android:dropDownWidth="match_parent"
+        android:ems="10"
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/textWeeklyIncome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weekly Income:"
-        android:textSize="18dp"
-        android:textColor="@color/textColor"
-        android:textStyle="bold"
-        android:layout_below="@id/textCurrency"
+        android:layout_below="@id/textGoal"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:text="Weekly Income:"
+        android:textColor="@color/textColor"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editTextWeeklyIncome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_below="@id/editTextGoal"
+        android:layout_alignStart="@id/editTextGoal"
         android:layout_toRightOf="@id/textWeeklyIncome"
-        android:layout_below="@id/editTextCurrency"
-        android:layout_alignStart="@id/editTextCurrency" />
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textExpenditure"
@@ -121,14 +111,17 @@
         android:id="@+id/btnCalculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:textSize="20dp"
-        android:textColor="@color/buttonTextColor"
-        android:background="@color/buttonColor"
         android:layout_below="@+id/textPercentage"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/buttonColor"
         android:padding="10dp"
-        android:layout_margin="20dp"
-        android:layout_centerInParent="true"/>
+        android:text="Calculate"
+        android:textColor="@color/buttonTextColor"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/btnHelp"
@@ -142,4 +135,5 @@
         android:layout_margin="20dp"
         android:layout_centerInParent="true"
         android:text="@string/help_button" />
+
 </RelativeLayout>
