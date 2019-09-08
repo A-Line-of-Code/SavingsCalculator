@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private double goalWithCurrency, incomeAfterTax, savings;
     private int weeks;
     private String currency;
+    private Button btnGoCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         editTextExpenditure = findViewById(R.id.editTextExpenditure);
         editTextPercentage = findViewById(R.id.editTextPercentage);
         btnCalculate = findViewById(R.id.btnCalculate);
+        btnGoCalendar = (Button) findViewById(R.id.btnGoCalendar);
 
         dropdownCurrencies = findViewById(R.id.spinnerCurrency);
         final String[] currencies = new String[]{"NZD","USD","AUD","EUR","GBP"};
@@ -66,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent help = new Intent(getApplicationContext(), HelpActivity.class);
                 startActivity(help);
+            }
+        });
+
+        btnGoCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SetDateActivity.class);
+                startActivity(intent);
             }
         });
     }
