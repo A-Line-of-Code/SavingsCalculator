@@ -1,34 +1,39 @@
 package com.example.savingscalculator;
+import android.util.Log;
+
 import java.text.*;
 import java.util.*;
 
 public class Calculate2 {
 
-    String date;
-    int days;
+    private String date;
+    private int days;
 
-    public Calculate2(String date, int days){
+    Calculate2(String date, int days){
         this.date=date;
         this.days=days;
     }
-        
-    public String calculateFinDate(String date, int days) {
-        String startDate = date;
 
+    String calculateFinDate(String date, int days) {
+        try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
             Calendar c = Calendar.getInstance(); // Get Calendar Instance
-        try {
-            c.setTime(sdf.parse(startDate));
+
+            c.setTime(sdf.parse(date));
             c.add(Calendar.DATE, (days - 1));
-        } catch (ParseException e) {
+
+            sdf = new SimpleDateFormat("dd-MM-yyyy");
+            Date resultdate = new Date(c.getTimeInMillis());
+            String finishDate = sdf.format(resultdate);
+            Log.d("finishDate","finishDate: "+ finishDate);
+            return finishDate;
+
+        } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-        sdf = new SimpleDateFormat("dd-MM-yyyy");
-        Date resultdate = new Date(c.getTimeInMillis());
-        String finishDate = sdf.format(resultdate);
-        System.out.println("finishDate:"+finishDate);
-        return finishDate;
+
     }
 
 }

@@ -14,25 +14,38 @@ public class SetDateActivity extends AppCompatActivity {
     private Button btnFinishDate;
     private CalendarView mCalendarView;
     private int weeks, days;
+    String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setdate);
 
-        btnFinishDate = findViewById(R.id.btnFinishDate);
         mCalendarView = findViewById(R.id.calendarView);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
-                String date = i2 + "-"+ (i1+1) + "-"+ i;
+                date = i2 + "-"+ (i1+1) + "-"+ i;
+                Toast.makeText(
+                        SetDateActivity.this, "Starts Saving on: "
+                        + date , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnFinishDate = findViewById(R.id.btnFinishDate);
+        btnFinishDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 int weeks = getIntent().getExtras().getInt("weeks");
                 days = weeks * 7;
                 Calculate2 c2 = new Calculate2(date, days);
+                String finishDate = c2.calculateFinDate(date,days);
+
                 Toast.makeText(
-                        SetDateActivity.this, "Saving Finish Date: "
-                        + c2 , Toast.LENGTH_SHORT).show();
+                        SetDateActivity.this, "Finishes Saving on: "
+                                + finishDate , Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
