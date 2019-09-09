@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
             weeks = c1.calculateWeeks(goalWithCurrency, savings);
 
             Toast.makeText(MainActivity.this, "It will take " + weeks + " weeks to save $" + goal + " (" + currency + ")", Toast.LENGTH_SHORT).show();
+            /*added by Skylar 09SEP2019*/
+            Intent intent = new Intent(MainActivity.this, SetDateActivity.class);
+            intent.putExtra("weeks", weeks);
+            startActivity(intent);
+                /*added by Skylar 09SEP2019*/
             }
         });
 
