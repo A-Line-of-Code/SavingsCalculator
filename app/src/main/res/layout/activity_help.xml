@@ -115,4 +115,28 @@
         android:layout_marginLeft="10dp"
         android:text="@string/help_percentage"
         />
+
+    <TextView
+        android:id="@+id/textSetSavingBtn"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPercentage"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:text="Set Saving Date"
+        />
+
+    <TextView
+        android:id="@+id/textSetSavingBtnDesc"
+        android:textColor="@color/textColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPercentage"
+        android:layout_toRightOf="@id/textSetSavingBtn"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:text="After calculating the amount of weeks it takes towards a desired item, click Set Saving Date button to figure out the saving period."
+        />
 </RelativeLayout>

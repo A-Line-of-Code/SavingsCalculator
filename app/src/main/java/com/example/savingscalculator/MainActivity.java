@@ -79,9 +79,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SetDateActivity.class);
                 intent.putExtra("weeks", weeks);
                 startActivity(intent);
-                /*added by Skylar 09SEP2019*/
-                /*Intent intent = new Intent(getApplicationContext(), SetDateActivity.class);
-                startActivity(intent);*/
             }
         });
     }
