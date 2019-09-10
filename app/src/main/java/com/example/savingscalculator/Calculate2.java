@@ -47,7 +47,6 @@ public class Calculate2 {
                 sdf = new SimpleDateFormat("dd-MM-yyyy");
                 Date resultdate = new Date(c.getTimeInMillis());
                 finishDate = sdf.format(resultdate);
-                Log.d("finishDate", "finishDate: " + finishDate);
             }
             return finishDate;
 
