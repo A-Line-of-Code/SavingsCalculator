@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SetDateActivity" android:label="SetDate">
+        <activity android:name=".SetDateActivity" android:label="@string/set_date_label">
             <intent-filter>
 
                 <category android:name="android.intent.category.LAUNCHER" />

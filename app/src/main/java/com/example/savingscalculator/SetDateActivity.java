@@ -38,7 +38,7 @@ public class SetDateActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int weeks = getIntent().getExtras().getInt("weeks");
                 days = weeks * 7;
-                Calculate2 c2 = new Calculate2(date, days);
+                CalculateDate c2 = new CalculateDate(date, days);
                 String finishDate = c2.calculateFinDate(date,days);
 
                 Toast.makeText(

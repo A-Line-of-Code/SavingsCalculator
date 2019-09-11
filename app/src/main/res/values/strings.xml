@@ -3,6 +3,9 @@
     <string name="main_activity_label">Savings Calculator</string>
     <string name="help_activity_label">Help</string>
     <string name="help_button">Help</string>
+    <string name="set_date_label">Set Date</string>
+    <string name="start_date_label">Choose Saving Start Date</string>
+    <string name="finish_date_button">Calculate Finish Date</string>
     <string name="help_goal_label">Goal</string>
     <string name="help_weekly_income_label">Weekly Income</string>
     <string name="help_expenditure_label">Expenditure</string>

@@ -6,11 +6,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Calculate2Test {
+public class CalculateDateTest {
 
     private String date, expected, actual;
     private int days;
-    private Calculate2 c1;
+    private CalculateDate c1;
 
     @Before
     public void setUp() throws Exception {
@@ -18,7 +18,7 @@ public class Calculate2Test {
         days = 14;
         expected = "24-09-2019";
 
-        c1 = new Calculate2(date, days);
+        c1 = new CalculateDate(date, days);
         actual = c1.calculateFinDate(c1.getDate(),c1.getDays());
     }
 

@@ -4,7 +4,7 @@ import android.util.Log;
 import java.text.*;
 import java.util.*;
 
-public class Calculate2 {
+public class CalculateDate {
 
     private String date;
     private int days;
@@ -26,7 +26,7 @@ public class Calculate2 {
     }
 
 
-    Calculate2(String date, int days){
+    CalculateDate(String date, int days){
         this.date=date;
         this.days=days;
     }
@@ -45,8 +45,8 @@ public class Calculate2 {
                 c.add(Calendar.DATE, (days - 1));
 
                 sdf = new SimpleDateFormat("dd-MM-yyyy");
-                Date resultdate = new Date(c.getTimeInMillis());
-                finishDate = sdf.format(resultdate);
+                Date resultDate = new Date(c.getTimeInMillis());
+                finishDate = sdf.format(resultDate);
             }
             return finishDate;
 
