@@ -1,1 +1,5 @@
-# Android app development. It was a team project and I was one of three collaborators.
+## A team project at school (2)
+
+Development: Java/Android <br />
+Purpose: TDD & Team collaboration
+
